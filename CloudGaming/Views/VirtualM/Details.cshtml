@@ -1,0 +1,36 @@
+@model CloudGaming.Models.VirtualM
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>VirtualM</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PublicIp)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PublicIp)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Login)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Login)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="link" asp-action="Edit" asp-route-id="@Model?.Name">Edit</a> |
+    <a class="link" asp-action="Index">Back to List</a>
+</div>

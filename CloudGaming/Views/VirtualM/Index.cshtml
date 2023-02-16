@@ -1,0 +1,49 @@
+@model IEnumerable<CloudGaming.Models.VirtualM>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a class="link" asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PublicIp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Login)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublicIp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Login)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                <a class="link" asp-action="Edit" asp-route-id="@item.Name">Edit</a> |
+                <a class="link" asp-action="Details" asp-route-id="@item.Name">Details</a> |
+                <a class="link" asp-action="Delete" asp-route-id="@item.Name">Delete</a>
+                <a type="button" class="btn btn-primary" asp-action="ActivateVm" asp-route-id="@item.Name">Activate</a>
+                <a type="button" class="btn btn-danger" asp-action="DisableVm" asp-route-id="@item.Name">Disable</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
